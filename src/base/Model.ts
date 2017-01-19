@@ -1,5 +1,6 @@
 namespace bg {
     
+    //装饰数据对象
     export function observable(defaultVal: any) {
         
         return function (target: Object, key) {

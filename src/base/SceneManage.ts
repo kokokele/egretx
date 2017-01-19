@@ -1,3 +1,9 @@
+/*
+* @file 场景管理器
+* @author zhangpeng53
+*/
+
+
 namespace bg {
     export class SceneManage extends egret.DisplayObjectContainer {
     
