@@ -29,19 +29,7 @@ namespace bg {
                 this.unbind(key, this._evtPoll[key]);
             }
         }
-        
-        public show(){
-            this._sm.push(this);
-        }
-        
-        public showToRoot(){
-            this._sm.pushRoot(this);
-        }
-        
-        public hide(){
-            this._sm.pop();
-        }
-        
+            
         protected onAdd(){
             
         }

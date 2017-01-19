@@ -96,7 +96,7 @@ class Main extends eui.UILayer {
         if(this.isThemeLoadEnd && this.isResourceLoadEnd){
 
             bg.App.ins.init(this); 
-            bg.App.ins.showView('ExampleView');
+            bg.App.ins.pushScene('AppScene');
 
             let button = new eui.Button();
             button.label = "Click!";
@@ -105,12 +105,25 @@ class Main extends eui.UILayer {
             this.addChild(button);
             button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnClick, this);
 
+            let button2 = new eui.Button();
+            button2.label = "Click2";
+            button2.horizontalCenter = 0;
+            button2.verticalCenter = 140;
+            this.addChild(button2);
+            button2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnClick2, this);
+
         }
     }
 
     private onBtnClick(e: egret.TouchEvent) {
-        // this.app.showView('ExampleView2');
+        bg.App.ins.pushScene('ExampleView2');
         AppModel.ins.data = 'onBtnClick------data';
+    }
+
+    private onBtnClick2(e: egret.TouchEvent) {
+        bg.App.ins.popScene();
+        console.log(2111);
+        
     }
     /**
      * 资源组加载出错

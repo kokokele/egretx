@@ -100,18 +100,28 @@ var Main = (function (_super) {
     Main.prototype.createScene = function () {
         if (this.isThemeLoadEnd && this.isResourceLoadEnd) {
             bg.App.ins.init(this);
-            bg.App.ins.showView('ExampleView');
+            bg.App.ins.pushScene('AppScene');
             var button = new eui.Button();
             button.label = "Click!";
             button.horizontalCenter = 0;
             button.verticalCenter = 0;
             this.addChild(button);
             button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnClick, this);
+            var button2 = new eui.Button();
+            button2.label = "Click2";
+            button2.horizontalCenter = 0;
+            button2.verticalCenter = 140;
+            this.addChild(button2);
+            button2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnClick2, this);
         }
     };
     Main.prototype.onBtnClick = function (e) {
-        // this.app.showView('ExampleView2');
+        bg.App.ins.pushScene('ExampleView2');
         AppModel.ins.data = 'onBtnClick------data';
+    };
+    Main.prototype.onBtnClick2 = function (e) {
+        bg.App.ins.popScene();
+        console.log(2111);
     };
     /**
      * 资源组加载出错

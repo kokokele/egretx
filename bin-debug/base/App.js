@@ -6,6 +6,7 @@ var bg;
     bg.MessageCenter = new bg.Emitter();
     var App = (function () {
         function App() {
+            this._sm = bg.SceneManage.ins;
         }
         Object.defineProperty(App, "ins", {
             get: function () {
@@ -21,12 +22,25 @@ var bg;
             this._root = root;
             this._root.addChild(bg.SceneManage.ins.getContainer());
         };
-        App.prototype.showView = function (viewName) {
-            var cls = egret.getDefinitionByName(viewName);
+        App.prototype.pushScene = function (sceneName) {
+            if (this._currentSceneName && this._currentSceneName == sceneName)
+                return;
+            this._sm.push(this.getScene(sceneName));
+        };
+        App.prototype.pushSceneToRoot = function (sceneName) {
+            this._sm.pushRoot(this.getScene(sceneName));
+        };
+        App.prototype.popScene = function () {
+            this._currentSceneName = '';
+            this._sm.pop();
+        };
+        App.prototype.getScene = function (sceneName) {
+            this._currentSceneName = sceneName;
+            var cls = egret.getDefinitionByName(sceneName);
             if (!cls)
-                throw new Error("找不到view类：" + viewName);
+                throw new Error("找不到Scene类：" + sceneName);
             var view = new cls();
-            view.show();
+            return view;
         };
         return App;
     }());

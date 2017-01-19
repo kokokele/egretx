@@ -30,15 +30,6 @@ var bg;
                 this.unbind(key, this._evtPoll[key]);
             }
         };
-        Scene.prototype.show = function () {
-            this._sm.push(this);
-        };
-        Scene.prototype.showToRoot = function () {
-            this._sm.pushRoot(this);
-        };
-        Scene.prototype.hide = function () {
-            this._sm.pop();
-        };
         Scene.prototype.onAdd = function () {
         };
         Scene.prototype.onRemove = function () {

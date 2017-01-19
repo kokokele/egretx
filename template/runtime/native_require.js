@@ -20,7 +20,7 @@ var game_file_list = [
 	"bin-debug/base/ModelEvent.js",
 	"bin-debug/base/SceneManage.js",
 	"bin-debug/model/AppModel.js",
-	"bin-debug/view/ExampleView.js",
+	"bin-debug/view/AppScene.js",
 	"bin-debug/view/ExampleView2.js",
 	//----auto game_file_list end----
 ];

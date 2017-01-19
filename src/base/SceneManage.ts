@@ -67,6 +67,6 @@ namespace bg {
         this._views = [];
     }
         
-}
+    }
 }
 
