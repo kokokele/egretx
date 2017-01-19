@@ -123,6 +123,13 @@ class Main extends eui.UILayer {
     private onBtnClick2(e: egret.TouchEvent) {
         bg.App.ins.popScene();
         console.log(2111);
+        bg.fetch().then(function(obj){
+            console.log('obj:', obj);
+            
+        }).catch(() => {
+            console.log('post error');
+            
+        })
         
     }
     /**

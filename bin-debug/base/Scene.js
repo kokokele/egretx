@@ -1,3 +1,7 @@
+/*
+* @file 场景基础类, 需继承
+* @author zhangpeng53
+*/
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
@@ -18,22 +22,28 @@ var bg;
             _this._evtPoll = {};
             return _this;
         }
+        //监听数据改变
         Scene.prototype.bind = function (type, callback) {
             bg.MessageCenter.add(type, callback, this);
             this._evtPoll[type] = callback;
         };
+        //移除数据改变监听
         Scene.prototype.unbind = function (type, callback) {
             bg.MessageCenter.remove(type, callback, this);
         };
+        //移除全部数据监听
         Scene.prototype.unbindAll = function () {
             for (var key in this._evtPoll) {
                 this.unbind(key, this._evtPoll[key]);
             }
         };
+        //当scene添加到舞台调用    
         Scene.prototype.onAdd = function () {
         };
+        //当scene移除后调用
         Scene.prototype.onRemove = function () {
         };
+        //---------------------------
         Scene.prototype._onAdd = function (e) {
             this.onAdd();
         };

@@ -1,3 +1,7 @@
+/*
+* @file 应用类
+* @author zhangpeng53
+*/
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
@@ -18,18 +22,22 @@ var bg;
             enumerable: true,
             configurable: true
         });
+        //初始app
         App.prototype.init = function (root) {
             this._root = root;
             this._root.addChild(bg.SceneManage.ins.getContainer());
         };
+        //显示场景 
         App.prototype.pushScene = function (sceneName) {
             if (this._currentSceneName && this._currentSceneName == sceneName)
                 return;
             this._sm.push(this.getScene(sceneName));
         };
+        //将场景在最外层展示
         App.prototype.pushSceneToRoot = function (sceneName) {
             this._sm.pushRoot(this.getScene(sceneName));
         };
+        //移除顶部场景
         App.prototype.popScene = function () {
             this._currentSceneName = '';
             this._sm.pop();

@@ -1,5 +1,6 @@
 var bg;
 (function (bg) {
+    //装饰数据对象
     function observable(defaultVal) {
         return function (target, key) {
             var _val = defaultVal;

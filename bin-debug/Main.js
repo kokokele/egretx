@@ -122,6 +122,11 @@ var Main = (function (_super) {
     Main.prototype.onBtnClick2 = function (e) {
         bg.App.ins.popScene();
         console.log(2111);
+        bg.fetch().then(function (obj) {
+            console.log('obj:', obj);
+        }).catch(function (e) {
+            console.log(e);
+        });
     };
     /**
      * 资源组加载出错
