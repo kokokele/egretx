@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib":[
+            "es5","dom"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

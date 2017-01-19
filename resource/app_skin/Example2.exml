@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Example2" width="640" height="960" xmlns:e="http://ns.egret.com/eui">
+	<e:Image source="bg_jpg" x="301.3" y="138.25" anchorOffsetX="18.82" anchorOffsetY="10.32" width="185.34" height="213.33" rotation="89.85"/>
+</e:Skin>
