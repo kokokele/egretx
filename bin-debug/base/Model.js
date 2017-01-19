@@ -1,6 +1,3 @@
-var __reflect = (this && this.__reflect) || function (p, c, t) {
-    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
-};
 var bg;
 (function (bg) {
     function observable(defaultVal) {
@@ -18,22 +15,6 @@ var bg;
         };
     }
     bg.observable = observable;
-    function fireGet(type) {
-        return function (taget, key, descriptor) {
-            var oldSet = descriptor.get;
-        };
-    }
-    bg.fireGet = fireGet;
-    function fireBind(type) {
-        return function (taget, key, descriptor) {
-            var oldSet = descriptor.set;
-            descriptor.set = function (val) {
-                console.log('111111111');
-                // MessageCenter.fire(new ModelEvent(type, val));
-                oldSet.call(null, val);
-            };
-        };
-    }
     // export function Relation(cls: any) {
     //     return function (target: Object, propertyKey) {
     //         var _val;
@@ -53,13 +34,5 @@ var bg;
     //             console.log(cls);
     //         }
     //     }
-    var BaseModel = (function () {
-        function BaseModel() {
-            console.log('BaseModel constructor');
-        }
-        return BaseModel;
-    }());
-    bg.BaseModel = BaseModel;
-    __reflect(BaseModel.prototype, "bg.BaseModel");
 })(bg || (bg = {}));
 //# sourceMappingURL=Model.js.map

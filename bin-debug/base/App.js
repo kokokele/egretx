@@ -5,10 +5,22 @@ var bg;
 (function (bg) {
     bg.MessageCenter = new bg.Emitter();
     var App = (function () {
-        function App(root) {
+        function App() {
+        }
+        Object.defineProperty(App, "ins", {
+            get: function () {
+                if (this._ins == null) {
+                    this._ins = new App();
+                }
+                return this._ins;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        App.prototype.init = function (root) {
             this._root = root;
             this._root.addChild(bg.SceneManage.ins.getContainer());
-        }
+        };
         App.prototype.showView = function (viewName) {
             var cls = egret.getDefinitionByName(viewName);
             if (!cls)
