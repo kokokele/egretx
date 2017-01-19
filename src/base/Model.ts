@@ -8,7 +8,6 @@ namespace bg {
             
             Object.defineProperty(target, key, { set: function(val) {
                 // console.log("val:", val, evtType, target);
-                
                 MessageCenter.fire(new ModelEvent(evtType, val));
                 _val = val;
             }, get: () => {
@@ -17,29 +16,7 @@ namespace bg {
         });
 
         }
-    }
-    
-    export function fireGet(type:string) {
-        
-        return function (taget:any, key:string, descriptor:TypedPropertyDescriptor<any>){
-            let oldSet = descriptor.get;
-           
-        }
-    }
-
-  
-    
-    function fireBind(type:string) {
-        return function (taget:any, key:string, descriptor:TypedPropertyDescriptor<any>){
-            let oldSet = descriptor.set;
-            descriptor.set = function(val){
-                console.log('111111111')
-                // MessageCenter.fire(new ModelEvent(type, val));
-                oldSet.call(null, val);
-            }
-        }
-    }
-
+    } 
     // export function Relation(cls: any) {
     //     return function (target: Object, propertyKey) {
             
@@ -62,13 +39,4 @@ namespace bg {
     //             console.log(cls);
     //         }
     //     }
-   
-    export class BaseModel{
-
-        test:String;
-
-        constructor(){
-            console.log('BaseModel constructor')
-        }
-    }
 }
