@@ -5,7 +5,7 @@ class AppScene extends bg.Scene {
     }
 
     protected onAdd() {
-        this.bind('AppModel.data', (e) => {
+        this.on('AppModel.data', (e) => {
             console.log(e.obj);
             
         })

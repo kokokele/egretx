@@ -11,9 +11,9 @@ export class Action {
     constructor() {
         Action.add(this);
     }
+
     private static add(ac:Action) {
         const cn =  ac["__proto__"]["__class__"];
-        console.log(cn, ac);
         this.actionMap[cn] = ac;
     }
 
