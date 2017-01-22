@@ -1,6 +1,9 @@
 namespace bg {
     
-    //装饰数据对象
+    /**
+     * @file 装饰数据对象
+     * @author zhangpeng53
+     */
     export function observable(defaultVal: any) {
         
         return function (target: Object, key) {

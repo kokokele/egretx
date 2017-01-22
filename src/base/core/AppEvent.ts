@@ -1,3 +1,7 @@
+/**
+ * @file AppEvent 
+ * @author zhangpeng53
+ */
 class AppEvent extends egret.Event {
 
     public constructor(type: string, public obj?: Object, bubbles: boolean = false, cancelable: boolean = false) {

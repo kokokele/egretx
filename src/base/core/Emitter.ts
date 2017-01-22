@@ -1,5 +1,9 @@
 namespace bg {
-       
+
+    /** 
+     * @file 触发器，事件广播使用
+     * @author zhangpeng53
+     * */   
     export class Emitter {
         private static _ins: Emitter;
 
