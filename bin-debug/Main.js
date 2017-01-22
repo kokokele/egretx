@@ -116,16 +116,16 @@ var Main = (function (_super) {
         }
     };
     Main.prototype.onBtnClick = function (e) {
-        bg.App.ins.pushScene('ExampleView2');
-        AppModel.ins.data = 'onBtnClick------data';
+        bg.Action.do('GameAction');
+        bg.Toast.show('我是消息提示信息');
     };
     Main.prototype.onBtnClick2 = function (e) {
         bg.App.ins.popScene();
         console.log(2111);
         bg.fetch().then(function (obj) {
             console.log('obj:', obj);
-        }).catch(function (e) {
-            console.log(e);
+        }).catch(function () {
+            console.log('post error');
         });
     };
     /**
@@ -158,4 +158,3 @@ var Main = (function (_super) {
     return Main;
 }(eui.UILayer));
 __reflect(Main.prototype, "Main");
-//# sourceMappingURL=Main.js.map

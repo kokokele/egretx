@@ -111,13 +111,12 @@ class Main extends eui.UILayer {
             button2.verticalCenter = 140;
             this.addChild(button2);
             button2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnClick2, this);
-
         }
     }
 
     private onBtnClick(e: egret.TouchEvent) {
-        bg.App.ins.pushScene('ExampleView2');
-        AppModel.ins.data = 'onBtnClick------data';
+        bg.Action.do('GameAction');
+        bg.Toast.show('我是消息提示信息');
     }
 
     private onBtnClick2(e: egret.TouchEvent) {

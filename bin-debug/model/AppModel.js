@@ -29,4 +29,3 @@ __decorate([
     __metadata("design:type", String)
 ], AppModel.prototype, "data", void 0);
 __reflect(AppModel.prototype, "AppModel");
-//# sourceMappingURL=AppModel.js.map
