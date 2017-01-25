@@ -10,6 +10,7 @@ var game_file_list = [
 	"bin-debug/base/core/Emitter.js",
 	"bin-debug/base/core/AppEvent.js",
 	"bin-debug/base/core/Action.js",
+	"bin-debug/base/core/View.js",
 	"bin-debug/base/core/Scene.js",
 	"bin-debug/base/core/App.js",
 	"bin-debug/base/core/Model.js",

@@ -5,16 +5,14 @@ namespace bg {
  * @author zhangpeng53
  */
 export class Action {
-    
+
+    private static classMap:Object = {};
     private static actionMap:Object = {};
     
-    constructor() {
-        Action.add(this);
-    }
 
-    private static add(ac:Action) {
-        const cn =  ac["__proto__"]["__class__"];
-        this.actionMap[cn] = ac;
+    public static add(cl:any) {
+        const clName = cl['name'];
+        this.classMap[clName] = cl;
     }
 
     /**
@@ -28,11 +26,19 @@ export class Action {
      * 触发action
      * @param action类名
      */
-    public static do(actionClassName:string) {
-        const action = this.actionMap[actionClassName];
-        if(action) {
-            action.run();
+    public static do(cl:any) {
+        const clName = cl['name'];
+        if(this.actionMap[clName]) {
+            this.actionMap[clName]['run']();
+        } else {
+            const cls:any = this.classMap[clName];
+            if(cls) {
+                const ins:Action = new cls;
+                ins.run();
+                this.actionMap[clName] = ins;
+            }
         }
+       
     }
 
 }

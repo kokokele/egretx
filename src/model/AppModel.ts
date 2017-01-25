@@ -1,7 +1,9 @@
-class AppModel {
+class AppModel extends bg.Model{
 
-    @bg.observable('default value')
+    @bg.observable('AppModel-data-value')
     data:string;
+
+   
 
     private static _ins:AppModel;
 
@@ -9,8 +11,6 @@ class AppModel {
        if(!this._ins) this._ins = new AppModel;
        return this._ins;    
     }
-
-    constructor() {
-        
-    }
 }
+
+bg.Model.add(AppModel);

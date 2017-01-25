@@ -1,13 +1,13 @@
 class GameAction extends bg.Action {
-   constructor() {
-       super();
-   }
+
+   @bg.inject(AppModel)
+   public m:AppModel;
    
    protected run(){
-       console.log('gameAction run');
        bg.App.ins.pushScene('ExampleView2');
-       AppModel.ins.data = 'onBtnClick------data';
+       console.log(this.m.data);
    }
+    
 }
 
-new GameAction();
+bg.Action.add(GameAction);

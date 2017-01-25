@@ -116,7 +116,7 @@ var Main = (function (_super) {
         }
     };
     Main.prototype.onBtnClick = function (e) {
-        bg.Action.do('GameAction');
+        bg.Action.do(GameAction);
         bg.Toast.show('我是消息提示信息');
     };
     Main.prototype.onBtnClick2 = function (e) {
@@ -158,4 +158,3 @@ var Main = (function (_super) {
     return Main;
 }(eui.UILayer));
 __reflect(Main.prototype, "Main");
-//# sourceMappingURL=Main.js.map

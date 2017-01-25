@@ -115,7 +115,7 @@ class Main extends eui.UILayer {
     }
 
     private onBtnClick(e: egret.TouchEvent) {
-        bg.Action.do('GameAction');
+        bg.Action.do(GameAction);
         bg.Toast.show('我是消息提示信息');
     }
 

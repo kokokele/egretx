@@ -4,16 +4,16 @@ class AppScene extends bg.Scene {
         this.skinName = 'Example';
     }
 
-    protected onAdd() {
+    protected onAddStage() {
         this.on('AppModel.data', (e) => {
-            console.log(e.obj);
+            console.log("AppScene onAdd:", e.obj);
             
         })
         console.log('ExampleView onAdd--');
         
     }
 
-    protected onRemove() {
+    protected onRemoveStage() {
         console.log('ExampleView onRemove');
     }
 }
