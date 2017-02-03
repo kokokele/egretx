@@ -96,7 +96,7 @@ class Main extends eui.UILayer {
         if(this.isThemeLoadEnd && this.isResourceLoadEnd){
 
             bg.App.ins.init(this); 
-            bg.App.ins.pushScene('AppScene');
+            bg.App.ins.pushScene(AppScene);
 
             let button = new eui.Button();
             button.label = "Click!";

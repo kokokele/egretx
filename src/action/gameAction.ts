@@ -4,8 +4,8 @@ class GameAction extends bg.Action {
    public m:AppModel;
    
    protected run(){
-       bg.App.ins.pushScene('ExampleView2');
-       console.log(this.m.data);
+       bg.App.ins.pushScene(ExampleView2);
+       console.log(this.m.data); 
    }
     
 }

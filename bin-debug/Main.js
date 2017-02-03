@@ -100,7 +100,7 @@ var Main = (function (_super) {
     Main.prototype.createScene = function () {
         if (this.isThemeLoadEnd && this.isResourceLoadEnd) {
             bg.App.ins.init(this);
-            bg.App.ins.pushScene('AppScene');
+            bg.App.ins.pushScene(AppScene);
             var button = new eui.Button();
             button.label = "Click!";
             button.horizontalCenter = 0;
@@ -158,3 +158,4 @@ var Main = (function (_super) {
     return Main;
 }(eui.UILayer));
 __reflect(Main.prototype, "Main");
+//# sourceMappingURL=Main.js.map

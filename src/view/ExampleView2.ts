@@ -1,10 +1,10 @@
-class ExampleView2 extends bg.Scene {
+class ExampleView2 extends bg.View {
     constructor() {
         super();
         this.skinName = 'Example2';
     }
 
-    protected onAdd() {
+    protected onAddStage() {
         console.log('ExampleView2 onAdd--');
     }
 }

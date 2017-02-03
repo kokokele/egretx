@@ -38,9 +38,11 @@ namespace bg{
         /**
          * 显示场景
          */
-        public pushScene(sceneName:string) {
-            if(this._currentSceneName && this._currentSceneName == sceneName) return;
-            this._sm.push(this.getScene(sceneName));
+        public pushScene(sceneClass:any) {
+            // if(this._currentSceneName && this._currentSceneName == sceneClass) return;
+            console.log('sceeeeeeeeeamy');
+            
+            this._sm.push(this.getScene(sceneClass));
         }
 
         /**
@@ -58,11 +60,10 @@ namespace bg{
             this._sm.pop();
         }
 
-        private getScene(sceneName:string):Scene {
-            this._currentSceneName = sceneName;
-            const cls:any = egret.getDefinitionByName(sceneName);
-            if(!cls) throw new Error("找不到Scene类：" + sceneName);
-            const view:bg.Scene = new cls();
+        private getScene(sceneClass:any):Scene {
+            this._currentSceneName = sceneClass;
+            if(!sceneClass) throw new Error("找不到Scene类");
+            const view:bg.Scene = new sceneClass();
             return view;
         }
         

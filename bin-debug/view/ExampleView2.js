@@ -13,9 +13,10 @@ var ExampleView2 = (function (_super) {
         _this.skinName = 'Example2';
         return _this;
     }
-    ExampleView2.prototype.onAdd = function () {
+    ExampleView2.prototype.onAddStage = function () {
         console.log('ExampleView2 onAdd--');
     };
     return ExampleView2;
-}(bg.Scene));
+}(bg.View));
 __reflect(ExampleView2.prototype, "ExampleView2");
+//# sourceMappingURL=ExampleView2.js.map

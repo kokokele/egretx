@@ -1,4 +1,4 @@
-class AppModel extends bg.Model{
+class AppModel {
 
     @bg.observable('AppModel-data-value')
     data:string;
