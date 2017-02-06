@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="Example2" width="640" height="960" xmlns:e="http://ns.egret.com/eui">
-	<e:Image source="bg_jpg" x="301.3" y="138.25" anchorOffsetX="18.82" anchorOffsetY="10.32" width="185.34" height="213.33" rotation="89.85"/>
+<e:Skin class="Example2" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_jpg" x="416.15" y="242.25" anchorOffsetX="18.82" anchorOffsetY="10.32" width="185.34" height="213.33" rotation="89.85"/>
+	<e:Label text="我是场景2" x="251.5" y="178" textColor="0xf20e97"/>
+	<e:Button id="backBtn" label="返回" x="285" y="429"/>
 </e:Skin>

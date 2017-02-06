@@ -25,8 +25,9 @@ var game_file_list = [
 	"bin-debug/AssetAdapter.js",
 	"bin-debug/model/AppModel.js",
 	"bin-debug/action/gameAction.js",
-	"bin-debug/view/AppScene.js",
+	"bin-debug/action/GetDataAction.js",
 	"bin-debug/view/ExampleView2.js",
+	"bin-debug/view/AppScene.js",
 	//----auto game_file_list end----
 ];
 

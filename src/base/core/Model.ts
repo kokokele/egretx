@@ -64,7 +64,7 @@ namespace bg {
             if(this.modelMap[modelClassName]) return this.modelMap[modelClassName];
             const cl:any = this.classMap[modelClassName]; 
             if(cl) {
-                //依赖初始化对象
+                //依赖时初始化对象
                 const m = new cl();
                 this.modelMap[modelClassName] = m;
                 return m;

@@ -11,6 +11,9 @@ var ExampleView2 = (function (_super) {
     function ExampleView2() {
         var _this = _super.call(this) || this;
         _this.skinName = 'Example2';
+        _this.backBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
+            bg.App.popScene();
+        }, _this);
         return _this;
     }
     ExampleView2.prototype.onAddStage = function () {

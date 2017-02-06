@@ -1,7 +1,13 @@
 class ExampleView2 extends bg.View {
+    public backBtn:eui.Button;
+
     constructor() {
         super();
         this.skinName = 'Example2';
+
+        this.backBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, (e) => {
+            bg.App.popScene();
+        }, this)
     }
 
     protected onAddStage() {

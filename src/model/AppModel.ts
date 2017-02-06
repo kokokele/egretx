@@ -3,6 +3,9 @@ class AppModel {
     @bg.observable('AppModel-data-value')
     data:string;
 
+    @bg.observable(0)
+    score:number;
+
    
 
     private static _ins:AppModel;

@@ -95,42 +95,11 @@ class Main extends eui.UILayer {
     private createScene(){
         if(this.isThemeLoadEnd && this.isResourceLoadEnd){
 
-            bg.App.ins.init(this); 
-            bg.App.ins.pushScene(AppScene);
-
-            let button = new eui.Button();
-            button.label = "Click!";
-            button.horizontalCenter = 0;
-            button.verticalCenter = 0;
-            this.addChild(button);
-            button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnClick, this);
-
-            let button2 = new eui.Button();
-            button2.label = "Click2";
-            button2.horizontalCenter = 0;
-            button2.verticalCenter = 140;
-            this.addChild(button2);
-            button2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnClick2, this);
+            bg.App.init(this); 
+            bg.App.pushScene(AppScene);
         }
     }
 
-    private onBtnClick(e: egret.TouchEvent) {
-        bg.Action.do(GameAction);
-        bg.Toast.show('我是消息提示信息');
-    }
-
-    private onBtnClick2(e: egret.TouchEvent) {
-        bg.App.ins.popScene();
-        console.log(2111);
-        bg.fetch().then(function(obj){
-            console.log('obj:', obj);
-            
-        }).catch(() => {
-            console.log('post error');
-            
-        })
-        
-    }
     /**
      * 资源组加载出错
      *  The resource group loading failed

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="Example" width="640" height="960" xmlns:e="http://ns.egret.com/eui">
+<e:Skin class="Example" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:bg="bg.*" xmlns:w="http://ns.egret.com/wing">
 	<e:Image source="bg_jpg" x="223.23" y="189.76" anchorOffsetX="21.73" anchorOffsetY="14.76" width="214" height="305"/>
+	<e:Button id="addScore" label="+1" x="258.5" y="494"/>
+	<e:Button id="changeStage" label="切换场景" x="258.5" y="557"/>
+	<e:Label id="score" text="0" x="268" y="132" textColor="0x89c12a" textAlign="center" anchorOffsetX="0" width="81"/>
+	<e:Button id="getDataBtn" label="加载数据" x="260" y="621"/>
 </e:Skin>

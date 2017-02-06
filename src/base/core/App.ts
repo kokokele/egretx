@@ -12,27 +12,16 @@ namespace bg{
     * @file 应用类
     * @author zhangpeng53
     */
-    export class App {
+    class Application {
         private _root:egret.DisplayObjectContainer;
-
-        private static _ins:App;
-        private _sm:SceneManage = SceneManage.ins;
         private _currentSceneName;
 
-
-        public static get ins(){
-            if(this._ins == null) {
-                this._ins = new App();
-            }
-            return this._ins;
-        }
-        
         /**
          * 初始化场景
          */
         public init(root:egret.DisplayObjectContainer){
             this._root = root;
-            this._root.addChild(SceneManage.ins.getContainer());
+            this._root.addChild(SceneManage.getContainer());
         }
         
         /**
@@ -42,14 +31,14 @@ namespace bg{
             // if(this._currentSceneName && this._currentSceneName == sceneClass) return;
             console.log('sceeeeeeeeeamy');
             
-            this._sm.push(this.getScene(sceneClass));
+            SceneManage.push(this.getScene(sceneClass));
         }
 
         /**
          * 将场景在最外层展示
          */
         public pushSceneToRoot(sceneName:string) {
-            this._sm.pushRoot(this.getScene(sceneName));
+            SceneManage.pushRoot(this.getScene(sceneName));
         }
 
         /**
@@ -57,7 +46,7 @@ namespace bg{
          */
         public popScene() {
             this._currentSceneName = '';
-            this._sm.pop();
+            SceneManage.pop();
         }
 
         private getScene(sceneClass:any):Scene {
@@ -68,4 +57,6 @@ namespace bg{
         }
         
     }
+
+    export const App = new Application();
 }

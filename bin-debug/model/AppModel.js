@@ -28,6 +28,10 @@ __decorate([
     bg.observable('AppModel-data-value'),
     __metadata("design:type", String)
 ], AppModel.prototype, "data", void 0);
+__decorate([
+    bg.observable(0),
+    __metadata("design:type", Number)
+], AppModel.prototype, "score", void 0);
 __reflect(AppModel.prototype, "AppModel");
 bg.Model.add(AppModel);
 //# sourceMappingURL=AppModel.js.map
