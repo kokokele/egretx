@@ -7,12 +7,10 @@ namespace bg {
     export class View extends eui.Component {
         
         private _evtPoll:Object;
-        protected _sm:SceneManage;
 
         constructor(){
             super();
-            this._sm = SceneManage.ins;
-            this.addEventListener(egret.Event.ADDED_TO_STAGE, this._onAdd, this);
+           this.addEventListener(egret.Event.ADDED_TO_STAGE, this._onAdd, this);
             this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this._onRemove, this);
             this._evtPoll = {};
         }
