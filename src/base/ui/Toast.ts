@@ -15,7 +15,7 @@ export class Toast extends egret.DisplayObjectContainer{
     }
     
     public static show( msg:string ):void{
-        const container = SceneManage.ins.getCurrentScene();
+        const container = SceneManage.getCurrentScene();
         var toast:Toast = new Toast( msg, container.stage.stageWidth, container.stage.stageHeight );
         container.addChild( toast );
     }
