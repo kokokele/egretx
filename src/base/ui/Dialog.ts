@@ -5,6 +5,7 @@ namespace bg {
         
         private _back:egret.Sprite;
         private _panel:eui.Panel;
+        
 
         
         constructor(){
@@ -14,12 +15,12 @@ namespace bg {
         
          public show(){
             this.back();
-            this._sm.addPopup(this._panel);
+            SceneManage.addPopup(this._panel);
         }
         
         public hide(){
-            this._sm.removePopup(this._panel);
-            this._sm.getCurrentScene().removeChild(this._back);
+            SceneManage.removePopup(this._panel);
+            SceneManage.getCurrentScene().removeChild(this._back);
             
             this._panel.removeEventListener(eui.UIEvent.CLOSING, this.onPanelClose, this);            
             (this._panel['ok'] as eui.Button).removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOk, this)
@@ -58,7 +59,7 @@ namespace bg {
         
         private back(){
             
-            const cs = this._sm.getCurrentScene();
+            const cs = SceneManage.getCurrentScene();
             
             if(!this._back) {
                 this._back = new egret.Sprite;

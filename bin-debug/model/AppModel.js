@@ -13,15 +13,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AppModel = (function () {
     function AppModel() {
     }
-    Object.defineProperty(AppModel, "ins", {
-        get: function () {
-            if (!this._ins)
-                this._ins = new AppModel;
-            return this._ins;
-        },
-        enumerable: true,
-        configurable: true
-    });
     return AppModel;
 }());
 __decorate([
