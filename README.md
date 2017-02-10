@@ -144,7 +144,7 @@ class AppScene extends bg.Scene {
 
 使用如下：
 
-```
+```javascript
 //设置Toast全局文本样式， 只需设置一次
 bg.Toast.setTextStyle({size:30, textColor:0xFF00bb});
 
