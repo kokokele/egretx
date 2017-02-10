@@ -10,7 +10,7 @@ namespace bg {
 
         constructor(){
             super();
-           this.addEventListener(egret.Event.ADDED_TO_STAGE, this._onAdd, this);
+            this.addEventListener(egret.Event.ADDED_TO_STAGE, this._onAdd, this);
             this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this._onRemove, this);
             this._evtPoll = {};
         }

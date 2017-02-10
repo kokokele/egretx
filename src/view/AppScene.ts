@@ -36,6 +36,11 @@ class AppScene extends bg.Scene {
         }, this)
     }
 
+    @bg.observer('AppModel.score')
+    private onScoreChaneg(val) {
+        console.log("observer onScoreChaneg:", val);
+    }
+
 
     protected onAddStage() {
         this.on('AppModel.data', (e) => {

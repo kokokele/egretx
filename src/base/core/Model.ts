@@ -41,7 +41,18 @@ namespace bg {
         });
 
         }
-    } 
+    }
+
+    /**
+     * 装饰监听函数
+     */
+    export function observer(type:string) {
+        return function (taget:any, key:string, descriptor:TypedPropertyDescriptor<any>){
+          MessageCenter.add(type, (e) => {
+             if(typeof(descriptor.value) == 'function') descriptor.value(e.obj); 
+          }, this); 
+        }
+    }
 
     /**
      * @file 数据模型
@@ -73,16 +84,7 @@ namespace bg {
         }
     }
 
-    // export function fire(type:string) {
-    //     return function (taget:any, key:string, descriptor:TypedPropertyDescriptor<any>){
-    //         let oldSet = descriptor.set;
-    //         descriptor.set = function(val){
-    //             // console.log('1111');
-    //             oldSet.call(null, val);
-    //             // console.log('2222');
-    //         }
-    //     }
-    // }
+    
  
     // export function Relation(cls: any) {
     //     return function (target: Object, propertyKey) {
