@@ -7,7 +7,7 @@
 
 main.ts 增加启动代码如下
 
-```
+```javascript
 private createScene(){
         if(this.isThemeLoadEnd && this.isResourceLoadEnd){
 
@@ -22,7 +22,7 @@ private createScene(){
 
 直接使用 bg.App操作。
 
-```
+```javascript
         /**
          * 显示场景
          */
@@ -44,7 +44,7 @@ private createScene(){
 
 如下代码：
 
-```
+```javascript
 class GameAction extends bg.Action {
 
    
@@ -69,8 +69,7 @@ bg.Action.do(GetDataAction);
 
 ## 数据绑定
 
-事例：
-```
+```javascript
 class AppModel {
 
     
@@ -86,7 +85,8 @@ bg.Model.add(AppModel);
 ```
 
 使用数据：
-```
+
+```javascript
 class AppScene extends bg.Scene {
 
     public addScore:eui.Button;
