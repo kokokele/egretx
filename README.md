@@ -1,5 +1,6 @@
 ## 简介
 包括：数据绑定，事件机制，场景切换，工具类。
+
 ## 使用说明
 
 - 入口文件：
@@ -135,4 +136,23 @@ class AppScene extends bg.Scene {
         console.log('ExampleView onRemove');
     }
 }
+```
+
+## 组件使用
+- Toast
+消息提示
+
+使用如下：
+
+```
+//设置Toast全局文本样式， 只需设置一次
+bg.Toast.setTextStyle({size:30, textColor:0xFF00bb});
+
+//设置 Toast 全局背景图片，只需设置一次
+bg.Toast.setBg(BGTexture);
+
+this.toastBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, (e) => {
+    //调用
+    bg.Toast.show('我是 toast');
+}, this)
 ```
