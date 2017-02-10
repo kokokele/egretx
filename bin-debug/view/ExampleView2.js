@@ -22,4 +22,3 @@ var ExampleView2 = (function (_super) {
     return ExampleView2;
 }(bg.View));
 __reflect(ExampleView2.prototype, "ExampleView2");
-//# sourceMappingURL=ExampleView2.js.map

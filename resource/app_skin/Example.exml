@@ -5,4 +5,5 @@
 	<e:Button id="changeStage" label="切换场景" x="258.5" y="557"/>
 	<e:Label id="score" text="0" x="268" y="132" textColor="0x89c12a" textAlign="center" anchorOffsetX="0" width="81"/>
 	<e:Button id="getDataBtn" label="加载数据" x="260" y="621"/>
+	<e:Button id="toastBtn" label="Toast" x="258" y="679"/>
 </e:Skin>

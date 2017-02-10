@@ -4,7 +4,7 @@ class AppScene extends bg.Scene {
     public changeStage:eui.Button;
     public score:eui.Label;
     public getDataBtn:eui.Button;
-
+    public toastBtn:eui.Button;
 
     @bg.inject(AppModel)
     appM:AppModel;
@@ -27,6 +27,12 @@ class AppScene extends bg.Scene {
 
         this.getDataBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, (e) => {
             bg.Action.do(GetDataAction);
+        }, this)
+
+        bg.Toast.setTextStyle({size:30, textColor:0xFF00bb});
+
+        this.toastBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, (e) => {
+            bg.Toast.show('我是 toast');
         }, this)
     }
 

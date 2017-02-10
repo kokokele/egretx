@@ -6,41 +6,57 @@ namespace bg {
  * @example Toast.show('我是提示信息');
  */
 export class Toast extends egret.DisplayObjectContainer{
-    
+    private static _txtrToastBg:egret.Texture;
+
+private static _txtStyle:Object = {a: 1};
     /**
      * 设置背景图片
      */
     public static setBg(txtrToastBg:egret.Texture ):void{
         this._txtrToastBg = txtrToastBg;
     }
+
+    /**
+     * 设置文本样式
+     * @param style {
+     *  size, bold, textColor, stroke, strokeColor, fontFamily
+     * }
+     */
+    public static setTextStyle(style:any):void {
+        this._txtStyle = style;
+    }
     
     public static show( msg:string ):void{
+        var toast:Toast = new Toast( msg);
         const container = SceneManage.getCurrentScene();
-        var toast:Toast = new Toast( msg, container.stage.stageWidth, container.stage.stageHeight );
         container.addChild( toast );
     }
 
-    private static _txtrToastBg:egret.Texture;
 
-    constructor ( msg:string, w:number, h:number ){
+    constructor ( msg:string){
         super();
         
+        const container = SceneManage.getCurrentScene();
+        const w = container.stage.stageWidth;
+        const h = container.stage.stageHeight;
         var bg:egret.Bitmap = new egret.Bitmap( Toast._txtrToastBg );
         this.addChild( bg );
         
+        const style = Toast._txtStyle;
         var tx:egret.TextField = new egret.TextField;
         tx.multiline = true;
-        tx.size = 20;
-        tx.bold = true;
-        tx.textColor = 0xFFFFFF;
-        tx.stroke = 2;
-        tx.strokeColor = 0;
-        tx.text = msg;
-        tx.fontFamily = "微软雅黑";
+        tx.size = style['size'] || 20;
+        tx.bold = style['bold'] || true;
+        tx.textColor = style['textColor'] || 0xFFFFFF;
+        tx.stroke = style['stroke'] || 2;
+        tx.strokeColor = style['stokeColor'] || 0;
+        tx.fontFamily = style['fontFamily'] || "微软雅黑";
+
         tx.textAlign = egret.HorizontalAlign.CENTER;
         tx.width = w * .84;
+        tx.text = msg;
         if(Toast._txtrToastBg) tx.x = ( Toast._txtrToastBg.textureWidth - tx.width ) / 2;
-        tx.y = 50;
+        tx.y = 200;
         this.addChild( tx );
         
         bg.height = 12 + tx.height;
@@ -53,12 +69,13 @@ export class Toast extends egret.DisplayObjectContainer{
         this.alpha = 0;
         
         egret.Tween.get( this )
-            .to( { alpha: 1 }, 800, egret.Ease.quintOut )
+            .to( { alpha: 1 }, 100, egret.Ease.quintOut )
             //.to( { scaleX: 1.2, scaleY: 1.2 }, 100, egret.Ease.quintOut )
             //.call( ()=>{ console.log( "tween tween tween" ); } ) 
             //.to( { scaleX: 1.0, scaleY: 1.0 }, 300, egret.Ease.quintIn )
-            .wait( 1600 )
-            .to( { alpha: 0 }, 1200, egret.Ease.quintIn  ).call( ()=>{      /*  y: this.y - 50, */
+            .to({y: -150}, 300)
+            .wait( 1000 )
+            .to( { alpha: 0 }, 500, egret.Ease.quintIn  ).call( ()=>{      /*  y: this.y - 50, */
             if( this.parent ){
                 this.parent.removeChild( this );
             }
