@@ -203,6 +203,8 @@ var egret;
             }
             else if (fontFamily.indexOf(",") != -1) {
                 arr = fontFamily.split(",");
+            }
+            if (arr) {
                 var length_1 = arr.length;
                 for (var i = 0; i < length_1; i++) {
                     var fontFamily_1 = arr[i];
@@ -271,7 +273,7 @@ var egret;
         var OldNativeCanvasRenderContext = (function (_super) {
             __extends(OldNativeCanvasRenderContext, _super);
             function OldNativeCanvasRenderContext() {
-                var _this = _super.apply(this, arguments) || this;
+                var _this = _super !== null && _super.apply(this, arguments) || this;
                 _this.$matrix = new egret.Matrix();
                 _this.$nativeContext = null;
                 _this.$globalCompositeOperation = "source-over";
@@ -454,14 +456,17 @@ var egret;
                         else {
                             fontFamilyText = arr.slice(3).join(" ");
                         }
+                        var arr2 = void 0;
                         if (fontFamilyText.indexOf(", ") != -1) {
-                            arr = fontFamilyText.split(", ");
+                            arr2 = fontFamilyText.split(", ");
                         }
                         else if (fontFamilyText.indexOf(",") != -1) {
-                            arr = fontFamilyText.split(",");
-                            var length_2 = arr.length;
+                            arr2 = fontFamilyText.split(",");
+                        }
+                        if (arr2) {
+                            var length_2 = arr2.length;
                             for (var i = 0; i < length_2; i++) {
-                                var fontFamily = arr[i];
+                                var fontFamily = arr2[i];
                                 //暂时先不考虑带有引号的情况
                                 if (egret.fontMapping[fontFamily]) {
                                     this.$fontFamily = egret.fontMapping[fontFamily];
@@ -2729,7 +2734,7 @@ var egret;
         var NativeCanvasRenderContext = (function (_super) {
             __extends(NativeCanvasRenderContext, _super);
             function NativeCanvasRenderContext() {
-                var _this = _super.apply(this, arguments) || this;
+                var _this = _super !== null && _super.apply(this, arguments) || this;
                 _this.$matrix = new egret.Matrix();
                 _this.$nativeContext = null;
                 _this.$globalCompositeOperation = "source-over";
@@ -2921,14 +2926,17 @@ var egret;
                         else {
                             fontFamilyText = arr.slice(3).join(" ");
                         }
+                        var arr2 = void 0;
                         if (fontFamilyText.indexOf(", ") != -1) {
-                            arr = fontFamilyText.split(", ");
+                            arr2 = fontFamilyText.split(", ");
                         }
                         else if (fontFamilyText.indexOf(",") != -1) {
-                            arr = fontFamilyText.split(",");
-                            var length_4 = arr.length;
+                            arr2 = fontFamilyText.split(",");
+                        }
+                        if (arr2) {
+                            var length_4 = arr2.length;
                             for (var i = 0; i < length_4; i++) {
-                                var fontFamily = arr[i];
+                                var fontFamily = arr2[i];
                                 //暂时先不考虑带有引号的情况
                                 if (egret.fontMapping[fontFamily]) {
                                     this.$fontFamily = egret.fontMapping[fontFamily];
@@ -4629,7 +4637,7 @@ var egret;
     var NativeResourceLoader = (function (_super) {
         __extends(NativeResourceLoader, _super);
         function NativeResourceLoader() {
-            var _this = _super.apply(this, arguments) || this;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
             /**
              * @private
              */
@@ -5070,7 +5078,7 @@ var egret;
         var NativeImageLoader = (function (_super) {
             __extends(NativeImageLoader, _super);
             function NativeImageLoader() {
-                var _this = _super.apply(this, arguments) || this;
+                var _this = _super !== null && _super.apply(this, arguments) || this;
                 /**
                  * @private
                  * 使用 load() 方法加载成功的 BitmapData 图像数据。
