@@ -25,4 +25,3 @@ __decorate([
 ], AppModel.prototype, "score", void 0);
 __reflect(AppModel.prototype, "AppModel");
 bg.Model.add(AppModel);
-//# sourceMappingURL=AppModel.js.map

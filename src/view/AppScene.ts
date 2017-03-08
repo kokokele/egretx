@@ -14,7 +14,8 @@ class AppScene extends bg.Scene {
         this.skinName = 'Example';
         
         this.on('AppModel.score', (e) => {
-            this.score.text = e.obj + '';
+            // this.score.text = e.obj + '';
+            // console.log(this)
         })
 
         this.addScore.addEventListener(egret.TouchEvent.TOUCH_TAP, (e) => {
@@ -36,10 +37,13 @@ class AppScene extends bg.Scene {
         }, this)
     }
 
-    @bg.observer('AppModel.score')
-    private onScoreChaneg(val) {
-        console.log("observer onScoreChaneg:", val);
-    }
+    // @bg.observer('AppModel.score')
+    // private onScoreChaneg(val) {
+    //     // console.log(val, this);
+    //     console.log(this)
+
+    //     // this.score.text = val + '';
+    // }
 
 
     protected onAddStage() {

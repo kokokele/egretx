@@ -44,12 +44,13 @@ namespace bg {
     }
 
     /**
+     * 不可用 绑定后的this 是类，不是类的实例。x！
      * 装饰监听函数
      */
     export function observer(type:string) {
-        return function (taget:any, key:string, descriptor:TypedPropertyDescriptor<any>){
+        return function (target:any, key:string, descriptor:TypedPropertyDescriptor<any>){
           MessageCenter.add(type, (e) => {
-             if(typeof(descriptor.value) == 'function') descriptor.value(e.obj); 
+             if(typeof(descriptor.value) == 'function') descriptor.value.call(target, e.obj); 
           }, this); 
         }
     }
