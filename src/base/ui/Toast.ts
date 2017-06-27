@@ -1,4 +1,4 @@
-namespace bg {
+namespace ex {
     
 /**
  * @file 消息提示ui

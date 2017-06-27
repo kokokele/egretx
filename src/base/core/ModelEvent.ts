@@ -1,4 +1,4 @@
-namespace bg{
+namespace ex{
     export class ModelEvent extends egret.Event {
 
     public constructor(type: string, public obj?: Object, bubbles: boolean = false, cancelable: boolean = false) {

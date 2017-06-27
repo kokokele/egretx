@@ -1,11 +1,11 @@
-class GameAction extends bg.Action {
+class GameAction extends ex.Action {
 
    
    
    protected run(){
-       bg.App.pushScene(ExampleView2);
+       ex.App.pushScene(ExampleView2);
    }
     
 }
 
-bg.Action.add(GameAction);
+ex.Action.add(GameAction);

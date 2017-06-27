@@ -1,6 +1,6 @@
 
 
-namespace bg{
+namespace ex {
 
     /**
      * 全局事件广播
@@ -29,7 +29,7 @@ namespace bg{
          */
         public pushScene(sceneClass:any) {
             // if(this._currentSceneName && this._currentSceneName == sceneClass) return;
-            console.log('sceeeeeeeeeamy');
+            // console.log('sceeeeeeeeeamy');
             
             SceneManage.push(this.getScene(sceneClass));
         }
@@ -52,7 +52,7 @@ namespace bg{
         private getScene(sceneClass:any):Scene {
             this._currentSceneName = sceneClass;
             if(!sceneClass) throw new Error("找不到Scene类");
-            const view:bg.Scene = new sceneClass();
+            const view:ex.Scene = new sceneClass();
             return view;
         }
         

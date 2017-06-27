@@ -1,5 +1,5 @@
-namespace bg {
-    export class Dialog extends bg.Scene {
+namespace ex {
+    export class Dialog extends ex.Scene {
         
         public content:eui.Component;
         

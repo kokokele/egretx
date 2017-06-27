@@ -1,10 +1,10 @@
-class GetDataAction extends bg.Action {
+class GetDataAction extends ex.Action {
 
-    @bg.inject(AppModel)
+    @ex.inject(AppModel)
     public m:AppModel;
 
     protected run() {
-        bg.fetch().then(function(obj){
+        ex.fetch().then(function(obj){
             console.log('obj:', obj);
             
         }).catch(() => {
@@ -14,4 +14,4 @@ class GetDataAction extends bg.Action {
     }
 }
 
-bg.Action.add(GetDataAction);
+ex.Action.add(GetDataAction);

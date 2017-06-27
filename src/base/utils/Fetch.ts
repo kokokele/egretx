@@ -1,4 +1,4 @@
-namespace bg {
+namespace ex {
     
 
     const url:string = 'http://www.baidu.com';

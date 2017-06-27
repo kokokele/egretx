@@ -99,8 +99,8 @@ var Main = (function (_super) {
     };
     Main.prototype.createScene = function () {
         if (this.isThemeLoadEnd && this.isResourceLoadEnd) {
-            bg.App.init(this);
-            bg.App.pushScene(AppScene);
+            ex.App.init(this);
+            ex.App.pushScene(AppScene);
         }
     };
     /**
@@ -133,3 +133,4 @@ var Main = (function (_super) {
     return Main;
 }(eui.UILayer));
 __reflect(Main.prototype, "Main");
+//# sourceMappingURL=Main.js.map

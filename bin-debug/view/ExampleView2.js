@@ -12,7 +12,7 @@ var ExampleView2 = (function (_super) {
         var _this = _super.call(this) || this;
         _this.skinName = 'Example2';
         _this.backBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
-            bg.App.popScene();
+            ex.App.popScene();
         }, _this);
         return _this;
     }
@@ -20,5 +20,6 @@ var ExampleView2 = (function (_super) {
         console.log('ExampleView2 onAdd--');
     };
     return ExampleView2;
-}(bg.View));
+}(ex.View));
 __reflect(ExampleView2.prototype, "ExampleView2");
+//# sourceMappingURL=ExampleView2.js.map

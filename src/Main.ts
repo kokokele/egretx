@@ -94,8 +94,8 @@ class Main extends eui.UILayer {
 
     private createScene(){
         if(this.isThemeLoadEnd && this.isResourceLoadEnd){
-            bg.App.init(this); 
-            bg.App.pushScene(AppScene);
+            ex.App.init(this); 
+            ex.App.pushScene(AppScene);
         }
     }
 

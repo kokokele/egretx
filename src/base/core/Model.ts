@@ -1,4 +1,4 @@
-namespace bg {
+namespace ex {
     
     /**
      * @file 装饰数据对象
@@ -30,11 +30,9 @@ namespace bg {
         const typeName = propsType['name'];
         
         return function (target: Object, key) {
-
             const evtType:string = target['constructor']['name'] + '.' + key;
-            
-            Object.defineProperty(target, key, { set: function(val) {
-               throw new Error('你不能给注入对象' + key + '赋值');
+            Object.defineProperty(target, key, {set: function(val) {
+                throw new Error('你不能给注入对象' + key + '赋值');
             }, get: () => {
                 return Model.getModel(typeName);
             }
@@ -44,13 +42,15 @@ namespace bg {
     }
 
     /**
-     * 不可用 绑定后的this 是类，不是类的实例。x！
+     * ===========不可用 绑定后的this 是类，不是类的实例。xxxxxx！===========
      * 装饰监听函数
      */
     export function observer(type:string) {
         return function (target:any, key:string, descriptor:TypedPropertyDescriptor<any>){
-          MessageCenter.add(type, (e) => {
-             if(typeof(descriptor.value) == 'function') descriptor.value.call(target, e.obj); 
+            MessageCenter.add(type, (e) => {
+                // console.log('target:',target[key]);
+                target[key]();
+                if(typeof(descriptor.value) == 'function') descriptor.value.call(target, e.obj); 
           }, this); 
         }
     }

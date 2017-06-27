@@ -3,7 +3,7 @@
 * @author zhangpeng53
 */
 
-namespace bg {
+namespace ex {
 
     export class Scene extends View {
         

@@ -4,7 +4,7 @@
 */
 
 
-namespace bg {
+namespace ex {
     
     class SceneManageClass extends egret.DisplayObjectContainer {
     

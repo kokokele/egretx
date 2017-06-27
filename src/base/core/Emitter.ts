@@ -1,4 +1,4 @@
-namespace bg {
+namespace ex {
 
     /** 
      * @file 触发器，事件广播使用

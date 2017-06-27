@@ -1,4 +1,4 @@
-class ExampleView2 extends bg.View {
+class ExampleView2 extends ex.View {
     public backBtn:eui.Button;
 
     constructor() {
@@ -6,7 +6,7 @@ class ExampleView2 extends bg.View {
         this.skinName = 'Example2';
 
         this.backBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, (e) => {
-            bg.App.popScene();
+            ex.App.popScene();
         }, this)
     }
 

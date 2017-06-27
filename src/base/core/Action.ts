@@ -1,4 +1,4 @@
-namespace bg {
+namespace ex {
 
 /**
  * @file action础类
